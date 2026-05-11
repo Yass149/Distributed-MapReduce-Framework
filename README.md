@@ -1,7 +1,9 @@
 # CSMBD Task A: Distributed MapReduce Framework
 
 **Author:** Yassine Malal
+
 **Module:** CSMBD (Big Data and Cloud Computing)
+
 **Institution:** University of Reading
 
 ## Overview
