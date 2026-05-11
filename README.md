@@ -1,15 +1,27 @@
-# CSMBD Task A — MapReduce Emulator
+# CSMBD Task A: Distributed MapReduce Framework
 
-## How to run
-python main.py
-python main.py --data Task_A_passenger_flight_data.csv --workers 4 --chunk 50 --top 10
+**Author:** Yassine Malal
+**Module:** CSMBD (Big Data and Cloud Computing)
+**Institution:** University of Reading
 
-## Requirements
-Python 3.8+ — no external libraries needed (stdlib only: csv, threading, collections)
+## Overview
+This repository contains a custom, fully generic MapReduce emulator written in Python. It is designed to process and analyze flight and passenger datasets by simulating the core distributed data processing phases of Apache Hadoop (Split, Map, Combine, Shuffle/Sort, Reduce). 
 
-## Project structure
-mapreduce.py          — full framework (load, split, map, shuffle, reduce)
-main.py               — entry point
-jobs/passenger_count.py  — core requirement
-jobs/busiest_route.py    — extended analysis
-jobs/avg_duration.py     — extended analysis
+The framework leverages a bounded thread pool for concurrent map execution and implements local pre-aggregation (a Combiner) to significantly reduce shuffle data volume.
+
+## Project Structure
+The architecture decouples the generic MapReduce engine from the specific business logic (jobs).
+
+```text
+csmbd-task-a/
+│
+├── jobs/                       # Business logic for specific MapReduce tasks
+│   ├── __init__.py
+│   ├── avg_duration.py         # Job 3: Calculates average duration per route
+│   ├── busiest_route.py       # Job 2: Identifies routes with the most flights
+│   └── passenger_count.py      # Job 1: Counts total flights per passenger
+│
+├── main.py                     # Entry point and command-line execution
+├── mapreduce.py                # Core generic engine (Split, Map, Shuffle, Reduce)
+├── Task_A_passenger_flight_data.csv # Raw dataset
+└── README.md
