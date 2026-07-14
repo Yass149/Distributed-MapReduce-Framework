@@ -27,3 +27,11 @@ csmbd-task-a/
 ├── mapreduce.py                # Core generic engine (Split, Map, Shuffle, Reduce)
 ├── Task_A_passenger_flight_data.csv # Raw dataset
 └── README.md
+```
+## How to Run
+This framework requires no external distributed dependencies (like Hadoop) as it relies on Python's native threading pool.
+
+1. Ensure you have Python 3.x installed.
+2. Clone the repository and navigate to the root directory.
+3. Execute the main MapReduce engine against the raw dataset:
+`python main.py --job avg_duration --input Task_A_passenger_flight_data.csv`
