@@ -1,5 +1,9 @@
 # Distributed MapReduce framework
 
+[![Python 3](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+![Concurrency](https://img.shields.io/badge/execution-thread%20pool-6A1B9A)
+![MapReduce](https://img.shields.io/badge/pattern-MapReduce-455A64)
+
 A small, generic Python MapReduce engine that emulates the core batch-processing stages of Hadoop locally: split, map, combine, shuffle/sort and reduce.
 
 > **Project status:** local distributed-systems demonstration. It uses a bounded thread pool on one machine; it is not a Hadoop cluster or production distributed service.
